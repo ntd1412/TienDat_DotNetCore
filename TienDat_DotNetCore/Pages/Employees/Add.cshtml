@@ -1,0 +1,38 @@
+﻿@page
+@model TienDat_DotNetCore.Pages.Employees.AddModel
+@{
+    var message = ViewData["Message"]?.ToString();
+}
+<form method="post">
+    <h1 class="mb-3">Add Nhân Viên</h1>
+    @if (!string.IsNullOrWhiteSpace(message))
+    {
+        <div class="alert alert-success" role="alert">
+            @message
+        </div>
+    }
+    <div class="mb-3">
+        <label class="form-label">Tên Nhân Viên</label>
+        <input type="text" class="form-control" asp-for="AddEmployeeRequest.Name" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" asp-for="AddEmployeeRequest.Email" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Lương</label>
+        <input type="number" class="form-control" asp-for="AddEmployeeRequest.Salary" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Ngày Sinh</label>
+        <input type="date" class="form-control" asp-for="AddEmployeeRequest.DateOfBirth" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Khoa</label>
+        <input type="text" class="form-control" asp-for="AddEmployeeRequest.Department" />
+    </div>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Lưu</button>
+    </div>
+
+</form>
